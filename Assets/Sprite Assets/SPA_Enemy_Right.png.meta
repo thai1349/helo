@@ -250,7 +250,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SPA_Enemy_Right_0: -570807933488141205
+      SPA_Enemy_Right_1: -7165589731514352205
+      SPA_Enemy_Right_2: -8322909438818461173
+      SPA_Enemy_Right_3: -6255873791086419314
+      SPA_Enemy_Right_4: 8428840200775804847
+      SPA_Enemy_Right_5: -4694928931602649372
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
