@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         Run();
+        FlipSprite();
     }
 
     void OnMove(InputValue Value)
@@ -33,13 +34,26 @@ public class PlayerMove : MonoBehaviour
 
     void OnJump()
     {
-        Debug.Log(">>>>> Jump");
+        Debug.Log(message:">>>>> Jump");
     }
 
     // dieu khien chuyen dong nhan vat
     void Run()
     {
-        var moveVelocity = new Vector2(x: moveInput.x * moveSpeed, _rigidbody2D.velocity.y);
+        var moveVelocity = new Vector2(x:moveInput.x * moveSpeed, _rigidbody2D.velocity.y);
         _rigidbody2D.velocity = moveVelocity;
+    }
+
+    // Abs: gia tri tuyet doi 
+    // Sign: dau cua gia tri
+    // Epsilon: gia tri nho nhat co the so sanh 
+    // xoay huong nhan vat theo chieu chuyen dong 
+    void FlipSprite()
+    {
+        bool playerHasHorizontalSpeed = Mathf.Abs(_rigidbody2D.velocity.x) > Mathf.Epsilon;
+        if (playerHasHorizontalSpeed)
+        {
+            transform.localScale = new Vector2(x:Mathf.Sign(_rigidbody2D.velocity.x), y:1f);
+        }
     }
 }
