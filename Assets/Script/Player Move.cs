@@ -86,7 +86,7 @@ public class PlayerMove : MonoBehaviour
         if (!isTouchingLadder)
         {
             _rigidbody2D.gravityScale = gravityScaleAtStart;
-            _animator.SetBool("isClimbing", false);
+            _animator.SetBool("isClimbing", false); 
             return;
         }
         var climbVelocity = new Vector2(_rigidbody2D.velocity.x, y:moveInput.y * climbSpeed);
